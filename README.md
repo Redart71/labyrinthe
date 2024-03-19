@@ -24,7 +24,7 @@ Détection automatique de la sortie pour passer au niveau suivant.
 Pour compiler ce projet, assurez-vous d'avoir un environnement de développement C++ configuré. Utilisez la commande de compilation appropriée pour votre compilateur. Par exemple, avec g++, vous pouvez utiliser :
 
 ```bash
-g++ -o jeuLabyrinthe main.cpp labyrinthe.cpp joueur.cpp -I.
+g++ src/main.cpp src/labyrinthe.cpp src/joueur.cpp -o start -Iinclude
 ```
 
 Pour exécuter le jeu, lancez le binaire créé :
