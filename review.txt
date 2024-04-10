@@ -1,0 +1,24 @@
+Je en suis pas sur de comprendre la configuration du CMake
+Pourquoi se retrouve on avec un fichier CMakeCache.txt ? A quoi sert il?
+a quoi sert cmake.check_cache ?
+Ici nous avons 3 fichiers. Allez au plus simple est souvent la meilleure solution : 
+"g++ main.cpp joueur.cpp" labyrinthe.cpp suffit à compiler l'executable.
+Prennez le temps de bien comprendre les outils "bas niveau" qui sont en fait les fondamentaux de ce que vous utilisez tous les jours.
+
+Evitez les abbréviations, même pour ce qui vous semble évident, ne laissez aucune excuse au lecteur pour mal interpréter votre logique.
+
+Evitez les commentaires supperflus qui ne font que répéter le code.
+
+Préferer les méthodes qui viennent avec les objet (carteAvecJoueur.get(joueur.y) plutot que carteAvecJoueur[joueur.y])
+Cela permet d'assurer que l'objet est bien sensé faire ce que vous demandez.
+
+Le code est clair et maitrisé.
+Vous pouvez commencer à vous poser certaines questions sur la facon dont l'ordinateur fonctionne et vous sensibiliser à certains aspects plus subtils :
+Typiquement ici dans main, a l'intereieur de la boucle for(auto& niveau : niveaux) {
+il y a la ligne std::cout << "Commandes : 'h' haut, 'b' bas, 'g' gauche, 'd' droite" << std::endl;
+
+Comprennez que la variable "Commandes : 'h' haut, 'b' bas, 'g' gauche, 'd' droite" est redéfinie à chaque boucle (et donc réalloué en mémoire etc)
+Préférez déclarer la string en dehors de la boucle (on peut ajouter le mot clé const pour aider le compilateur à optimiser le fait que cette variable ne changera pas)
+
+
+15/20
